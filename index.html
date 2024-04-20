@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.10.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .card{
+        height: 400px;
+      }
+    </style>
+
+</head>
+<body class="mx-6">
+    <header>
+      <div class="heading bg-sky-300 my-5 px-5 flex justify-between py-1">
+        <div class="heading-text">
+            <h3 class="text-2xl font-bold">Interactive </h3>
+           <p class="font-medium text-lg">Geometry Genius</p>
+        </div>
+        <div class="heading-btn my-auto py-auto">
+            <button class="btn bg-[#1090D8] border-none px-7 float-end text-[#fff]">Blog
+            </button>
+        </div>
+    </div>
+    </header>
+        <main class="flex">
+          <!-- Page Left -->
+            <div class="page-left grid grid-cols-3 w-9/12 felx-1">
+                <!-- Triangle -->
+            <div class="card w-11/12 bg-base-100 shadow-xl border-2 border-gray-100">
+                <figure><img src="images/triangle.png" alt="Shoes" class="w-8/12 mt-4" /></figure>
+                <div class="card-body text-center">
+                  <h2 class="text-xl text-center font-bold">Triangle</h2>
+                  <p>Area (A) = 0.5 X b X h</p>
+                  <div class="input-div w-full mt-3">
+                    <input type="text" class="w-20 bg-gray-200 text-[#000] rounded-md py-1 pl-2" placeholder="b" id="base">
+                    <span>cm</span>
+                    <input type="text" class="w-20 bg-gray-200 text-[#000] rounded-md p-1 pl-2" placeholder="h" id="height">
+                    <span>cm</span>
+                  </div>
+                  <div class="card-actions justify-end mt-7">
+                    <button onclick="calculateTriangle()" class="btn text-base-100 font-semibold text-base bg-[#1090D8] w-full">Calculate</button>
+                  </div>
+                </div>
+              </div>
+              <!-- Rectangle -->
+              <div class="card w-11/12 bg-base-100 shadow-xl border-2 border-gray-100">
+                <figure><img src="images/rectangle.png" alt="Shoes" class="w-9/12 mt-7" /></figure>
+                <div class="card-body text-center">
+                  <h2 class="text-xl text-center font-bold">Rectangle</h2>
+                  <p>Area (A) = w X I</p>
+                  <div class="input-div2 w-full mt-3">
+                    <input type="text" class="w-20 bg-gray-200 text-[#000] rounded-md py-1 pl-2" placeholder="w" id="width">
+                    <span>cm</span>
+                    <input type="text" class="w-20 bg-gray-200 text-[#000] rounded-md p-1 pl-2" placeholder="l" id="length">
+                    <span>cm</span>
+                  </div>
+                  <div class="card-actions justify-end mt-7">
+                    <button onclick="Rectangle()" class="btn text-base-100 font-semibold text-base bg-[#1090D8] w-full">Calculate</button>
+                  </div>
+                </div>
+              </div>
+              <!-- Parallelogram -->
+              <div class="card w-11/12 bg-base-100 shadow-xl border-2 border-gray-100">
+                <figure><img src="images/parallelogram.png" alt="Shoes" class="w-10/12 mt-7" /></figure>
+                <div class="card-body text-center">
+                  <h2 class="text-xl text-center font-bold">Parallelogram</h2>
+                  <p>Area (A) = b X h</p>
+                  <p class="">b=10cm, h=12cm</p>
+                  <div class="card-actions justify-end mt-7">
+                    <button class="btn text-base-100 font-semibold text-base bg-[#1090D8] w-full">Calculate</button>
+                  </div>
+                </div>
+              </div>
+              <!-- Rhombus -->
+              <div class="card w-11/12 bg-base-100 shadow-xl mt-5 border-2 border-gray-100">
+                <figure><img src="images/rhombus.png" alt="Shoes" class="w-9/12 mt-7" /></figure>
+                <div class="card-body text-center">
+                  <h2 class="text-xl text-center font-bold">Rhombus</h2>
+                  <p>Area (A) =0.5 X d <sub>1</sub> X d <sub>2</sub></p>
+                  <p class="">d <sub>1</sub>= 16cm, d <sub>2</sub>= 8cm</p>
+                  <div class="card-actions justify-end mt-7">
+                    <button class="btn text-base-100 font-semibold text-base bg-[#1090D8] w-full">Calculate</button>
+                  </div>
+                </div>
+              </div>
+              <!-- Pentagon -->
+              <div class="card w-11/12 bg-base-100 shadow-xl mt-5 border-2 border-gray-100">
+                <figure><img src="images/pentagon.png" alt="Shoes" class="w-7/12 mt-7" /></figure>
+                <div class="card-body text-center">
+                  <h2 class="text-xl text-center font-bold">Pentagon</h2>
+                  <p>Area (A) =0.5 X p X b</p>
+                  <p class="">p = 6cm, b = 10cm</p>
+                  <div class="card-actions justify-end mt-7">
+                    <button class="btn text-base-100 font-semibold text-base bg-[#1090D8] w-full">Calculate</button>    
+                  </div>
+                </div>
+              </div>
+              <!-- Ellipse -->
+              <div class="card w-11/12 bg-base-100 shadow-xl mt-5 border-2 border-gray-100">
+                <figure><img src="images/ellipse.png" alt="Shoes" class="w-9/12 mt-10" /></figure>
+                <div class="card-body text-center">
+                  <h2 class="text-xl text-center font-bold">Ellipse</h2>
+                  <p>Area (A) = πab</p>
+                  <p class="">a = 10cm, b = 4cm</p>
+                  <div class="card-actions justify-end mt-7">
+                    <button class="btn text-base-100 font-semibold text-base bg-[#1090D8] w-full">Calculate</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <!-- Page Right -->
+          <div class="page-right w-3/12 border-2 border-gray-100 ml-3" id="page-right">
+            <h3 class="underline font-bold text-center p-2">Area Calculation</h3>
+          </div>
+        </main>
+      <script src="calcuate.js"></script>
+      <script src="rectangle.js"></script>
+</body>
+</html>
